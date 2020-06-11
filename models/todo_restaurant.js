@@ -1,3 +1,4 @@
+//todo-restaurant models
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const todoRestaurantSchema = new Schema({
@@ -13,4 +14,4 @@ const todoRestaurantSchema = new Schema({
   description: String
 })
 
-module.exports = mongoose.model('todoRestaurant', todoRestaurantSchema)
+module.exports = mongoose.model('TodoRestaurant', todoRestaurantSchema)

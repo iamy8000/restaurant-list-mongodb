@@ -4,10 +4,13 @@ const exphbs = require('express-handlebars')
 const port = 3000
 const app = express()
 
+//setting handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
 
+//setting mongoose and mongodb
+//connect app.js with database
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/todo-restaurant', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -20,7 +23,7 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
-//set router
+//setting router
 app.get('/', (req, res) => {
   res.render('index')
 })
