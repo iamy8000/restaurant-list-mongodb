@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const restaurantList = require('../../restaurant.json').results
-// console.log(restaurantList[0].google_map)
-const TodoRestaurant = require('../todo_restaurant')
+const TodoRestaurant = require('../todo_restaurant') //載入TodoRestaurant models
 
 mongoose.connect('mongodb://localhost/todo-restaurant', { useNewUrlParser: true, useUnifiedTopology: true })
 

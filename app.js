@@ -4,6 +4,12 @@ const exphbs = require('express-handlebars')
 const port = 3000
 const app = express()
 
+//載入TodoRestaurant model
+const TodoRestaurant = require('./models/todo_restaurant')
+
+// setting static files
+app.use(express.static('public'))
+
 //setting handlebars
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -25,7 +31,19 @@ db.once('open', () => {
 
 //setting router
 app.get('/', (req, res) => {
-  res.render('index')
+  TodoRestaurant.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.log(error))
+})
+
+app.get('/restaurants/:id', (req, res) => {
+  const id = req.params.id
+  console.log(typeof id) //string
+  TodoRestaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('show', { restaurant }))
+    .catch(error => console.log(error))
 })
 
 app.listen(port, () => (
