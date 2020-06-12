@@ -30,6 +30,7 @@ db.once('open', () => {
 })
 
 //setting router
+//index.handlebars
 app.get('/', (req, res) => {
   TodoRestaurant.find()
     .lean()
@@ -37,12 +38,42 @@ app.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//show.handlebars
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
-  console.log(typeof id) //string
   TodoRestaurant.findById(id)
     .lean()
     .then(restaurant => res.render('show', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+//edit.handlebars
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  TodoRestaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('edit', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+//edit.handlebars, 接住編輯資訊
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  const category = req.body.category
+  const location = req.body.location
+  const google_map = req.body.google_map
+  const phone = req.body.phone
+  const description = req.body.description
+  TodoRestaurant.findById(id)
+    .then(restaurant => {
+      restaurant.category = category
+      restaurant.location = location
+      restaurant.google_map = google_map
+      restaurant.phone = phone
+      restaurant.description = description
+      return restaurant.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
     .catch(error => console.log(error))
 })
 
