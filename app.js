@@ -38,6 +38,39 @@ app.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//new.handlebars(將使用者導引至new.handlebars)
+app.get('/restaurants/new', (req, res) => {
+  return res.render('new')
+})
+
+//接住使用者新增的資料
+app.post('/restaurants', (req, res) => {
+  const name = req.body.name
+  const name_en = req.body.name_en
+  const rating = req.body.rating
+  const category = req.body.category
+  const location = req.body.location
+  const google_map = req.body.google_map
+  const phone = req.body.phone
+  const description = req.body.description
+  const image = req.body.image
+
+  return TodoRestaurant.create({ // 存入資料庫
+    name,
+    name_en,
+    rating,
+    category,
+    location,
+    google_map,
+    phone,
+    description,
+    image
+  })
+    .then(() => res.redirect('/')) // 新增完成後導回首頁
+    .catch(error => console.log(error))
+})
+
+
 //show.handlebars
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
