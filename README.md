@@ -16,8 +16,8 @@
 
 # Installation and execution
 <p>首先啟動終端機，並遵循以下指令。</p>
-```
 
+```
 //將專案複製到電腦中
 $ git clone https://github.com/iamy8000/restaurant-list-mongodb.git
 
@@ -30,5 +30,6 @@ $ npm install
 //執行專案
 $ npm run dev
 ```
+
 <p>若終端機顯示 "App is running on http://localhost:3000, 
 mongodb connected!"，便代表檔案安裝成功，即可開啟瀏覽器並進入http://localhost:3000。</p>
