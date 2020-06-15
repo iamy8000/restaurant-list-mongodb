@@ -110,6 +110,15 @@ app.post('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//delete function
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return TodoRestaurant.findById(id)
+    .then(todo => todo.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.listen(port, () => (
   console.log('App is running on http://localhost:3000')
 ))
