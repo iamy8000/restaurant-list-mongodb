@@ -38,6 +38,22 @@ app.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//search
+app.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  // const restaurants = TodoRestaurant.find({
+  //   name: { $regex: keyword }
+  // })
+  // console.log(restaurants)
+  // return res.render('index', { restaurants })
+  // console.log(keyword)
+
+  TodoRestaurant.find({
+    name: { $regex: keyword }
+  }).lean()
+    .then(restaurants => res.render('index', { restaurants }))
+})
+
 //new.handlebars(將使用者導引至new.handlebars)
 app.get('/restaurants/new', (req, res) => {
   return res.render('new')
