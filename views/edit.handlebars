@@ -61,9 +61,21 @@
           </div>
         </div>
 
+        <div class="form-group row">
+          <label for="image" class="col-sm-2 col-form-label">
+            <span class="text-secondary">
+              餐廳照片連結：
+            </span>
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="image" id="category" placeholder="http://www.image.com"
+              value="{{restaurant.image}}">
+          </div>
+        </div>
+
       </form>
-      <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
-        style="max-width: 600px;">
+      {{!-- <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
+        style="max-width: 600px;"> --}}
     </div>
   </div>
 </div>

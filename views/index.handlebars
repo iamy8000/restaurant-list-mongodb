@@ -14,8 +14,6 @@
           </div>
         </div>
       </form>
-      {{!-- <a class="btn btn-primary btn-sm" href="./restaurants/new" role="button">Create</a> --}}
-      {{!-- <a class="btn btn-primary btn-sm" href="./restaurants/new" role="button">Create</a> --}}
     </div>
   </div>
 </div>
@@ -44,7 +42,8 @@
             <div class="card-footer">
               <a class="btn btn-primary btn-sm" href="./restaurants/{{this._id}}/edit" role="button">Edit</a>
               <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
-                <button type="submit">delete</button>
+                <button type="submit"
+                  onclick="if (!confirm('Are you sure?')) { return false }"><span>delete</span></button>
               </form>
             </div>
           </div>

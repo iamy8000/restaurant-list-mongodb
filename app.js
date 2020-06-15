@@ -41,12 +41,6 @@ app.get('/', (req, res) => {
 //search
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  // const restaurants = TodoRestaurant.find({
-  //   name: { $regex: keyword }
-  // })
-  // console.log(restaurants)
-  // return res.render('index', { restaurants })
-  // console.log(keyword)
 
   TodoRestaurant.find({
     name: { $regex: keyword }
@@ -113,6 +107,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
   const google_map = req.body.google_map
   const phone = req.body.phone
   const description = req.body.description
+  const image = req.body.image
   TodoRestaurant.findById(id)
     .then(restaurant => {
       restaurant.category = category
@@ -120,6 +115,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
       restaurant.google_map = google_map
       restaurant.phone = phone
       restaurant.description = description
+      restaurant.image = image
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
