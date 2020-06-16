@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const port = 3000
+const methodOverride = require('method-override')
+
 const app = express()
 
 //載入TodoRestaurant model
@@ -14,6 +16,8 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(methodOverride('_method'))
 
 //setting mongoose and mongodb
 //connect app.js with database
@@ -100,7 +104,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
 })
 
 //edit.handlebars, 接住編輯資訊
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id', (req, res) => {
   const id = req.params.id
   const category = req.body.category
   const location = req.body.location
@@ -123,7 +127,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 //delete function
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return TodoRestaurant.findById(id)
     .then(todo => todo.remove())
