@@ -44,6 +44,8 @@ router.get('/:id', (req, res) => {
     .catch(error => console.log(error))
 })
 
+
+
 //edit.handlebars
 router.get('/:id/edit', (req, res) => {
   const id = req.params.id
@@ -84,5 +86,6 @@ router.delete('/:id', (req, res) => {
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
+
 
 module.exports = router
