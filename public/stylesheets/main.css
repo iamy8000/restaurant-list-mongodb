@@ -55,7 +55,11 @@ header {
 }
 
 .card img{
+  display: flex;
   height: 180px;
+  object-fit: cover;
+  background-position: center center;
+  background-size: cover;
 }
 
 .card-title{

@@ -8,9 +8,22 @@
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
           <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
-            value="" aria-describedby="search-button">
+            {{#if keyword}} value="{{keyword}}" {{/if}} aria-describedby="search-button">
           <div class="input-group-append">
-            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+            <button class="btn btn-success" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+            <div class="dropdown ml-1">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" name="sort"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                排序
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/?sort=rating&order=-1" name="-1">評分高優先</a>
+                <a class="dropdown-item" href="/?sort=category&order=1" name="1">類別：A-Z</a>
+                <a class="dropdown-item" href="/?sort=location&order=1" name="1">地址：A-Z</a>
+                <a class="dropdown-item" href="/?sort=name&order=1" name="1">餐廳名稱：A-Z</a>
+                <a class="dropdown-item" href="/?sort=name&order=-1" name="-1">餐廳名稱：Z-A</a>
+              </div>
+            </div>
           </div>
         </div>
       </form>
@@ -20,36 +33,41 @@
 
 <!-- restaurant list -->
 <div class="container mt-5">
+  {{#if warning}}
+  <div class="h4 text-center">
+    {{warning}}
+  </div>
+  {{/if}}
   <div class="row">
-    <div class="col-md-10 col-12 mx-auto">
-      <div class="card-columns">
-        {{#each restaurants}}
-        <a href="/restaurants/{{this._id}}" class="text-secondary">
-          <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
-            <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{this.name}}</h6>
+    {{#each restaurants}}
+    <div class="col-sm-3">
+      <a href="/restaurants/{{this._id}}" class="text-secondary">
+        <div class="card mb-3">
+          <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+          <div class="card-body p-3">
+            <h6 class="card-title mb-1">{{this.name}}</h6>
 
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
-              </div>
+            <div class="restaurant-category mb-1">
+              <i class="fas fa-utensils pr-2"></i> {{this.category}}
+            </div>
 
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{this.rating}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-            </div>
-            <div class="card-footer">
-              <a class="btn btn-primary btn-sm" href="./restaurants/{{this._id}}/edit" role="button">Edit</a>
-              <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-                <button type="submit"
-                  onclick="if (!confirm('Are you sure?')) { return false }"><span>delete</span></button>
-              </form>
-            </div>
+            <span class="badge badge-pill badge-danger font-weight-normal">
+              {{this.rating}}
+              <i class="fas fa-star fa-xs"></i>
+            </span>
           </div>
-        </a>
-        {{/each}}
-      </div>
+          <div class="card-footer">
+            <a class="btn btn-primary btn-sm" href="./restaurants/{{this._id}}/edit" role="button">Edit</a>
+            <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+              <button class="btn btn-danger btn-sm" type="submit"
+                onclick="if (!confirm('Are you sure?')) { return false }"><span>delete</span></button>
+            </form>
+          </div>
+        </div>
+      </a>
     </div>
+    {{/each}}
+    {{!-- </div> --}}
+    {{!-- </div> --}}
   </div>
 </div>

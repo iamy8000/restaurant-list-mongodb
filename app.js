@@ -27,9 +27,17 @@ app.use(routes)
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
   TodoRestaurant.find({
-    name: { $regex: keyword }
+    name: { $regex: keyword, $options: 'i' }
   }).lean()
-    .then(restaurants => res.render('index', { restaurants }))
+    .then(restaurants => {
+      console.log(restaurants.length)
+      if (restaurants.length === 0) {
+        const warning = `Sorry, we cannot found ${keyword}, please add it to the restaurants list. Thank you!`
+        res.render('index', { warning })
+      } else {
+        res.render('index', { restaurants, keyword })
+      }
+    })
     .catch(error => console.log(error))
 })
 
