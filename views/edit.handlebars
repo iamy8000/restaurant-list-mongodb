@@ -2,80 +2,71 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
-
-      <form action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST">
-        <button type="submit" class="btn btn-primary">Save</button>
-        {{!-- <a class="btn btn-primary btn-sm" href="/">back</a> --}}
-        <div class="form-group row">
-          <label for="category" class="col-sm-2 col-form-label">
+      <form action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST" id="editPageForm">
+        <div class="form-group">
+          <label for="category" class="col-form-label">
             <span class="text-secondary">
-              <i class="fas fa-utensils pr-2"></i>
               類別：
             </span>
           </label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="category" id="category" placeholder="Password"
-              value="{{restaurant.category}}">
-          </div>
+          <select class="form-control" name="category" id="category">
+            <option value="中東料理">中東料理</option>
+            <option value="義式料理">義式料理</option>
+            <option value="日本料理">日本料理</option>
+            <option value="美式">美式</option>
+            <option value="酒吧">酒吧</option>
+            <option value="台菜">台菜</option>
+            <option value="咖啡">咖啡</option>
+          </select>
         </div>
-
-        <div class="form-group row">
-          <label for="address" class="col-sm-2 col-form-label">
-            <span class="text-secondary">
-              <i class="fas fa-map-marker-alt pr-2"></i>
-              地址：
-            </span>
-          </label>
-          <div class="col-sm-5">
-            <input type="text" class="form-control" id="location" name="location" placeholder="請輸入地址"
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="address" class="col-form-label">
+              <span class="text-secondary">
+                地址：
+              </span>
+            </label>
+            <input type="text" class="form-control mb-1" id="location" name="location" placeholder="請輸入地址"
               value="{{restaurant.location}}">
           </div>
-          <div class="col-sm-5">
+          <div class="form-group col-md-6">
+            <label for="address" class="col-form-label">
+              <span class="text-secondary">
+                Google Map 連結：
+              </span>
+            </label>
             <input type="text" class="form-control" id="google_map" name="google_map" placeholder="請輸入Google Map連結"
               value="{{restaurant.google_map}}">
           </div>
         </div>
 
-        <div class="form-group row">
-          <label for="phone" class="col-sm-2 col-form-label">
+        <div class="form-group">
+          <label for="phone" class="col-form-label">
             <span class="text-secondary">
-              <i class="fas fa-mobile-alt pr-2"></i>
               電話：
             </span>
           </label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="電話"
-              value="{{restaurant.phone}}">
-          </div>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="電話" value="{{restaurant.phone}}">
         </div>
-
-        <div class="form-group row">
-          <label for="description" class="col-sm-2 col-form-label">
+        <div class="form-group">
+          <label for="description" class="col-form-label">
             <span class="text-secondary">
-              <i class="fas fa-mobile-alt pr-2"></i>
               餐廳簡介：
             </span></label>
-          <div class="col-sm-10">
-            <textarea class="form-control" id="description" name="description" rows="4"
-              placeholder="簡介">{{restaurant.description}}</textarea>
-          </div>
+          <textarea class="form-control" id="description" name="description" rows="4"
+            placeholder="簡介">{{restaurant.description}}</textarea>
         </div>
-
-        <div class="form-group row">
-          <label for="image" class="col-sm-2 col-form-label">
+        <div class="form-group">
+          <label for="image" class="col-form-label">
             <span class="text-secondary">
               餐廳照片連結：
             </span>
           </label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="image" id="category" placeholder="http://www.image.com"
-              value="{{restaurant.image}}">
-          </div>
+          <input type="text" class="form-control" name="image" id="category" placeholder="http://www.image.com"
+            value="{{restaurant.image}}">
         </div>
-
+        <button type="submit" class="btn btn-primary">Save</button>
       </form>
-      {{!-- <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
-        style="max-width: 600px;"> --}}
     </div>
   </div>
 </div>

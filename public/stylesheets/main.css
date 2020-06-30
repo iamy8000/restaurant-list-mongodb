@@ -123,11 +123,8 @@ body{
 }
 
 #restaurant-show-page{
-  /* display: flex;
-  flex-direction: column; */
   font-family: 'Noto Sans TC';
   margin-bottom: 10rem;
-  /* justify-content: space-around; */
 }
 
 #restaurant-description{
@@ -144,12 +141,21 @@ body{
 #deleteButton{
   background-color: #FFB7B2 !important;
   color: #66666E !important;
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', sans-serif;
   font-weight: 300;
 }
 
 #editButton:hover, #deleteButton:hover{
   color: white !important;
+}
+
+#editPageForm{
+  border: lightgray 1px solid;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 @media screen and (max-width: 992px) {
