@@ -8,7 +8,7 @@ body{
 
 .navbar {
   background-color: #678386;
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .navbar .navbar-brand {
@@ -31,7 +31,7 @@ body{
   background-size: cover;
 }
 
-#create {
+#createButton {
   font-weight: 400;
 }
 
@@ -41,8 +41,9 @@ body{
   margin: -5px;
   height: 400px;
   background: #dddddd center center url(../images/foodIcon-01.svg);
+  /* background: #dddddd center center url(../images/nucleo-food-icons-full.png); */
   background-size: cover;
-  filter: blur(2px);
+  filter: brightness(.8);
 }
 
 .search-bar .search-bar-outer {
@@ -54,7 +55,7 @@ body{
   border: 0;
   margin-top: -120px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', sans-serif ;
 }
 
 #search-button {
@@ -98,51 +99,60 @@ body{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', sans-serif;
   font-weight: 700;
 }
 
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', sans-serif;
   font-weight: 300;
   width: auto;
 }
 
 .restaurant-show-title {
   position: relative;
-  top: -230px;
-  color: white;
+  top: -210px;
+  color: black;
   text-align: center;
-  font-family: 'Rochester', cursive;
+  font-family: 'Rochester', 'Noto Sans TC';
   font-size: 4rem;
-  text-shadow: 0 0 20px black;
+  font-weight: 500;
+  text-shadow: 0 0 20px white;
+}
+
+#restaurant-show-page{
+  /* display: flex;
+  flex-direction: column; */
+  font-family: 'Noto Sans TC';
+  margin-bottom: 10rem;
+  /* justify-content: space-around; */
+}
+
+#restaurant-description{
+  background-color: cornsilk;
 }
 
 #editButton{
-  background-color: #EFE1C6 !important;
+  background-color: #B5EAD7 !important;
+  color: #66666E !important;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+}
+
+#deleteButton{
+  background-color: #FFB7B2 !important;
   color: #66666E !important;
   font-family: 'Noto Sans TC';
   font-weight: 300;
 }
 
-.card-footer form, #deleteButton{
-  border-color: #EFE1C6 !important;
-  color: #66666E !important;
-  font-family: 'Noto Sans TC';
-  font-weight: 300;
-}
-
-.card-footer form:hover, #deleteButton:hover{
-  background-color: #EFE1C6 !important;
-  color: white;
-  font-family: 'Noto Sans TC';
-  font-weight: 300;
+#editButton:hover, #deleteButton:hover{
+  color: white !important;
 }
 
 @media screen and (max-width: 992px) {
-  
   .card img{
     height: 115px;
   }
