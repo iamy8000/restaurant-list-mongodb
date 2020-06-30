@@ -7,7 +7,7 @@ body{
 }
 
 .navbar {
-  background-color: #678386;
+  background-color: #8B987C;
   font-family: 'Noto Sans TC', sans-serif;
 }
 
@@ -40,16 +40,15 @@ body{
   z-index: -1;
   margin: -5px;
   height: 400px;
-  background: #dddddd center center url(../images/foodIcon-01.svg);
-  /* background: #dddddd center center url(../images/nucleo-food-icons-full.png); */
+  background: #dddddd center center url(../images/relax.jpg);
   background-size: cover;
-  filter: brightness(.8);
+  filter: brightness(.7);
 }
 
 .search-bar .search-bar-outer {
   margin: 0 auto;
   max-width: 680px;
-  background-color: #284868;
+  background-color: #F6B472;
   border-radius: 8px;
   padding: 20px 30px;
   border: 0;
@@ -113,8 +112,8 @@ body{
 
 .restaurant-show-title {
   position: relative;
-  top: -210px;
-  color: black;
+  top: -240px;
+  color: white;
   text-align: center;
   font-family: 'Rochester', 'Noto Sans TC';
   font-size: 4rem;
@@ -149,7 +148,7 @@ body{
   color: white !important;
 }
 
-#editPageForm{
+#editPageForm, #newPageForm{
   border: lightgray 1px solid;
   border-radius: 5px;
   padding: 1.5rem;

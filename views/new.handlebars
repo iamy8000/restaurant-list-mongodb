@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
-      <form action="/restaurants" method="POST">
+      <form action="/restaurants" method="POST" id="newPageForm">
         <div class=" form-group row">
           <label class="col-sm-2 col-form-label">
             <span class="text-secondary">
@@ -11,10 +11,10 @@
             </span>
           </label>
           <div class="col-sm-5">
-            <input type="text" class="form-control" name="name" placeholder="ex: 番紅花">
+            <input type="text" class="form-control" name="name" placeholder="ex: 番紅花" required>
           </div>
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="name_en" name="name_en" placeholder="Restaurant name">
+            <input type="text" class="form-control" id="name_en" name="name_en" placeholder="Restaurant name" required>
           </div>
         </div>
         <div class="form-group row">
@@ -25,7 +25,16 @@
             </span>
           </label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="category" id="category" placeholder="ex: 美式、中餐、西餐">
+            {{!-- <input type="text" class="form-control" name="category" id="category" placeholder="ex: 美式、中餐、西餐"> --}}
+            <select class="form-control" name="category" id="category" required>
+              <option value="中東料理">中東料理</option>
+              <option value="義式料理">義式料理</option>
+              <option value="日本料理">日本料理</option>
+              <option value="美式">美式</option>
+              <option value="酒吧">酒吧</option>
+              <option value="台菜">台菜</option>
+              <option value="咖啡">咖啡</option>
+            </select>
           </div>
         </div>
 
@@ -37,7 +46,8 @@
             </span>
           </label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" name="rating" id="rating" placeholder="4.1" min="1" max="5">
+            <input type="number" class="form-control" name="rating" id="rating" placeholder="4.1" min="1" max="5"
+              required>
           </div>
         </div>
 
@@ -49,10 +59,12 @@
             </span>
           </label>
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="location" name="location" placeholder="ex: 台北市士林區忠誠路一段八巷5號">
+            <input type="text" class="form-control" id="location" name="location" placeholder="ex: 台北市士林區忠誠路一段八巷5號"
+              required>
           </div>
           <div class="col-sm-5">
-            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="請分享Google Map連結">
+            <input type="text" class="form-control" id="google_map" name="google_map" placeholder="請分享Google Map連結"
+              required>
           </div>
         </div>
 
@@ -64,7 +76,7 @@
             </span>
           </label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="ex: 02-12345678">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="ex: 02-12345678" required>
           </div>
         </div>
 
@@ -76,19 +88,20 @@
             </span></label>
           <div class="col-sm-10">
             <textarea class="form-control" id="description" name="description" rows="4"
-              placeholder="ex: 我們在乎每一位顧客、賣出去的每一滴咖啡、每一粒咖啡豆。而今，「Fika Fika Cafe Online Store」更期望把如此美好的體驗，分享給喜歡我們的每一位顧客，希望您無論在世界的哪一個角落，都能與我們一起享受「Fika Fika」的美好時光。"></textarea>
+              placeholder="ex: 我們在乎每一位顧客、賣出去的每一滴咖啡、每一粒咖啡豆。而今，「Fika Fika Cafe Online Store」更期望把如此美好的體驗，分享給喜歡我們的每一位顧客，希望您無論在世界的哪一個角落，都能與我們一起享受「Fika Fika」的美好時光。"
+              required></textarea>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="image" class="col-sm-2 col-form-label">
             <span class="text-secondary">
-              {{!-- <i class="fas fa-utensils pr-2"></i> --}}
               餐廳照片連結：
             </span>
           </label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="image" id="category" placeholder="http://www.image.com">
+            <input type="text" class="form-control" name="image" id="category" placeholder="http://www.image.com"
+              required>
           </div>
         </div>
         <div class="row col-10 justify-content-center">
