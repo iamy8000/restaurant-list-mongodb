@@ -2,37 +2,69 @@ header {
   overflow: hidden;
 }
 
+body{
+  font-family: 'Noto Sans TC';
+}
+
+.navbar {
+  background-color: #678386;
+  font-family: 'Noto Sans TC';
+}
+
 .navbar .navbar-brand {
-  color: #4592af;
+  color: white;
 }
 
 .navbar .navbar-brand:hover {
-  color: #226089;
+  color: #283348;
+}
+
+.navbar .navbar-brand img{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 50%;
+  border-color: #678386;
+  background-image: url(../images/IMG_3822.PNG);
+  background-position: center center;
+  background-size: cover;
+}
+
+#create {
+  font-weight: 400;
 }
 
 .banner {
   position: relative;
   z-index: -1;
   margin: -5px;
-  height: 360px;
-  background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  height: 400px;
+  background: #dddddd center center url(../images/foodIcon-01.svg);
   background-size: cover;
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 .search-bar .search-bar-outer {
   margin: 0 auto;
   max-width: 680px;
-  background-color: #fce2cf;
+  background-color: #284868;
   border-radius: 8px;
   padding: 20px 30px;
   border: 0;
-  margin-top: -60px;
+  margin-top: -120px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans TC';
 }
 
-.search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
+#search-button {
+  width: fit-content;
+  background-color: white;
+  border: #777479 0.5px solid;
+}
+
+.input-group input[type=text] {
+  border: #777479 0.5px solid;
 }
 
 .form-control::placeholder {
@@ -66,20 +98,47 @@ header {
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  font-family: 'Noto Sans TC';
+  font-weight: 700;
 }
 
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+  width: auto;
 }
 
 .restaurant-show-title {
   position: relative;
-  top: -100px;
+  top: -230px;
   color: white;
   text-align: center;
-  font-size: 3rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Rochester', cursive;
+  font-size: 4rem;
+  text-shadow: 0 0 20px black;
+}
+
+#editButton{
+  background-color: #EFE1C6 !important;
+  color: #66666E !important;
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+}
+
+.card-footer form, #deleteButton{
+  border-color: #EFE1C6 !important;
+  color: #66666E !important;
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
+}
+
+.card-footer form:hover, #deleteButton:hover{
+  background-color: #EFE1C6 !important;
+  color: white;
+  font-family: 'Noto Sans TC';
+  font-weight: 300;
 }
 
 @media screen and (max-width: 992px) {
@@ -97,7 +156,6 @@ header {
 }
 
 @media screen and (max-width: 575px) {
-  
   .card img{
     height: auto;
   }
