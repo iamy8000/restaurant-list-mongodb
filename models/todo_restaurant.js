@@ -1,6 +1,6 @@
 //todo-restaurant models
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 const todoRestaurantSchema = new Schema({
   id: Number,
   name: String,
@@ -11,7 +11,7 @@ const todoRestaurantSchema = new Schema({
   phone: String,
   google_map: String,
   rating: Number,
-  description: String
-})
+  description: String,
+});
 
-module.exports = mongoose.model('TodoRestaurant', todoRestaurantSchema)
+module.exports = mongoose.model("TodoRestaurant", todoRestaurantSchema);

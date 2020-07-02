@@ -2,13 +2,13 @@ header {
   overflow: hidden;
 }
 
-body{
-  font-family: 'Noto Sans TC';
+body {
+  font-family: "Noto Sans TC";
 }
 
 .navbar {
-  background-color: #8B987C;
-  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #8b987c;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .navbar .navbar-brand {
@@ -19,7 +19,7 @@ body{
   color: #283348;
 }
 
-.navbar .navbar-brand img{
+.navbar .navbar-brand img {
   display: flex;
   width: 30px;
   height: 30px;
@@ -42,19 +42,19 @@ body{
   height: 400px;
   background: #dddddd center center url(../images/relax.jpg);
   background-size: cover;
-  filter: brightness(.7);
+  filter: brightness(0.7);
 }
 
 .search-bar .search-bar-outer {
   margin: 0 auto;
   max-width: 680px;
-  background-color: #F6B472;
+  background-color: #f6b472;
   border-radius: 8px;
   padding: 20px 30px;
   border: 0;
   margin-top: -120px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Noto Sans TC', sans-serif ;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 #search-button {
@@ -63,7 +63,7 @@ body{
   border: #777479 0.5px solid;
 }
 
-.input-group input[type=text] {
+.input-group input[type="text"] {
   border: #777479 0.5px solid;
 }
 
@@ -86,7 +86,7 @@ body{
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card img{
+.card img {
   display: flex;
   height: 180px;
   object-fit: cover;
@@ -94,18 +94,18 @@ body{
   background-size: cover;
 }
 
-.card-title{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  font-family: 'Noto Sans TC', sans-serif;
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Noto Sans TC", sans-serif;
   font-weight: 700;
 }
 
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   font-weight: 300;
   width: auto;
 }
@@ -115,64 +115,64 @@ body{
   top: -240px;
   color: white;
   text-align: center;
-  font-family: 'Rochester', 'Noto Sans TC';
+  font-family: "Rochester", "Noto Sans TC";
   font-size: 4rem;
   font-weight: 500;
   text-shadow: 0 0 20px white;
 }
 
-#restaurant-show-page{
-  font-family: 'Noto Sans TC';
+#restaurant-show-page {
+  font-family: "Noto Sans TC";
   margin-bottom: 10rem;
 }
 
-#restaurant-description{
+#restaurant-description {
   background-color: cornsilk;
 }
 
-#editButton{
-  background-color: #B5EAD7 !important;
-  color: #66666E !important;
-  font-family: 'Noto Sans TC', sans-serif;
+#editButton {
+  background-color: #b5ead7 !important;
+  color: #66666e !important;
+  font-family: "Noto Sans TC", sans-serif;
   font-weight: 300;
 }
 
-#deleteButton{
-  background-color: #FFB7B2 !important;
-  color: #66666E !important;
-  font-family: 'Noto Sans TC', sans-serif;
+#deleteButton {
+  background-color: #ffb7b2 !important;
+  color: #66666e !important;
+  font-family: "Noto Sans TC", sans-serif;
   font-weight: 300;
 }
 
-#editButton:hover, #deleteButton:hover{
+#editButton:hover,
+#deleteButton:hover {
   color: white !important;
 }
 
-#editPageForm, #newPageForm{
+#editPageForm,
+#newPageForm {
   border: lightgray 1px solid;
   border-radius: 5px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 @media screen and (max-width: 992px) {
-  .card img{
+  .card img {
     height: 115px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  
   .restaurant-show-title {
     font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 575px) {
-  .card img{
+  .card img {
     height: auto;
   }
-  
 }

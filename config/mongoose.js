@@ -1,13 +1,16 @@
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/todo-restaurant', { useNewUrlParser: true, useUnifiedTopology: true })
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/todo-restaurant", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error')
-})
+const db = mongoose.connection;
+db.on("error", () => {
+  console.log("mongodb error");
+});
 
-db.once('open', () => {
-  console.log('mongodb connected!')
-})
+db.once("open", () => {
+  console.log("mongodb connected!");
+});
 
-module.exports = db
+module.exports = db;
