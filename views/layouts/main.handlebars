@@ -27,8 +27,7 @@
     <div class="container">
       <a class="navbar-brand" href="/">
         <img class="d-inline-block align-top">
-        {{#if isAuthenticated}}{{ user.name}}的 {{/if}}
-        餐廳清單
+        {{#if isAuthenticated}}{{ user.name}}的{{/if}}餐廳清單
       </a>
       {{#if isAuthenticated}}
       <a href="/users/logout" class="btn-sm btn btn-outline-light">Logout</a>
