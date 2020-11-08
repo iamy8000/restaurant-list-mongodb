@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/todo-restaurant", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true
 });
 
 const db = mongoose.connection;

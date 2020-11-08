@@ -12,6 +12,12 @@ const todoRestaurantSchema = new Schema({
   google_map: String,
   rating: Number,
   description: String,
+  userId: {  // 加入關聯設定
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true,
+    required: true
+  }
 });
 
 module.exports = mongoose.model("TodoRestaurant", todoRestaurantSchema);

@@ -9,6 +9,7 @@ router.get("/new", (req, res) => {
 
 //接住使用者新增的資料
 router.post("/", (req, res) => {
+  const userId = req.user._id
   const name = req.body.name;
   const name_en = req.body.name_en;
   const rating = req.body.rating;
@@ -21,6 +22,7 @@ router.post("/", (req, res) => {
 
   return TodoRestaurant.create({
     // 存入資料庫
+    userId,
     name,
     name_en,
     rating,
@@ -37,8 +39,9 @@ router.post("/", (req, res) => {
 
 //show.handlebars
 router.get("/:id", (req, res) => {
-  const id = req.params.id;
-  TodoRestaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id;
+  return TodoRestaurant.findOne({ _id, userId })
     .lean()
     .then((restaurant) => res.render("show", { restaurant }))
     .catch((error) => console.log(error));
@@ -46,8 +49,9 @@ router.get("/:id", (req, res) => {
 
 //edit.handlebars
 router.get("/:id/edit", (req, res) => {
-  const id = req.params.id;
-  TodoRestaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return TodoRestaurant.findOne({ _id, userId })
     .lean()
     .then((restaurant) => res.render("edit", { restaurant }))
     .catch((error) => console.log(error));
@@ -55,14 +59,16 @@ router.get("/:id/edit", (req, res) => {
 
 //edit.handlebars, 接住編輯資訊
 router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  const category = req.body.category;
-  const location = req.body.location;
-  const google_map = req.body.google_map;
-  const phone = req.body.phone;
-  const description = req.body.description;
-  const image = req.body.image;
-  TodoRestaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  const { category, location, google_map, phone, description, image } = req.body
+  // const category = req.body.category;
+  // const location = req.body.location;
+  // const google_map = req.body.google_map;
+  // const phone = req.body.phone;
+  // const description = req.body.description;
+  // const image = req.body.image;
+  return TodoRestaurant.findOne({ _id, userId })
     .then((restaurant) => {
       restaurant.category = category;
       restaurant.location = location;
@@ -72,14 +78,15 @@ router.put("/:id", (req, res) => {
       restaurant.image = image;
       return restaurant.save();
     })
-    .then(() => res.redirect(`/restaurants/${id}`))
+    .then(() => res.redirect(`/restaurants/${_id}`))
     .catch((error) => console.log(error));
 });
 
 //delete function
 router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  return TodoRestaurant.findById(id)
+  const userId = req.user._id
+  const _id = req.params.id
+  return TodoRestaurant.findOne({ _id, userId })
     .then((todo) => todo.remove())
     .then(() => res.redirect("/"))
     .catch((error) => console.log(error));
