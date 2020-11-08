@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const session = require('express-session')
+const usePassport = require('./config/passport')
 
 const routes = require('./routes')
 require('./config/mongoose')
@@ -28,6 +29,7 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
+usePassport(app)
 
 // 將 request 導入路由器
 app.use(routes)
