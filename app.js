@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
+const PORT = process.env.PORT || 3000
 const routes = require('./routes')
 require('./config/mongoose')
 
@@ -67,6 +68,6 @@ app.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.listen(process.env.PORT, () => (
-  console.log(`App is running on http://localhost:${process.env.PORT}`)
+app.listen(PORT, () => (
+  console.log(`App is running on http://localhost:${PORT}`)
 ))
