@@ -9,10 +9,12 @@ const User = require('../user')
 const db = require('../../config/mongoose')
 const SEED_USER = [
   {
+    name: 'user1',
     email: 'user1@example.com',
     password: '12345678'
   },
   {
+    name: 'user2',
     email: 'user2@example.com',
     password: '12345678'
   }
