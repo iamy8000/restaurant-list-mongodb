@@ -33,6 +33,9 @@ $ npm install
 
 //執行專案
 $ npm run dev
+
+//使用種子資料
+$ npm run seed
 ```
 
 <p>若終端機顯示 "App is running on http://localhost:3000, 
