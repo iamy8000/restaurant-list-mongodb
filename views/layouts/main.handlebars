@@ -30,8 +30,10 @@
         {{#if isAuthenticated}}{{ user.name}}的{{/if}}餐廳清單
       </a>
       {{#if isAuthenticated}}
-      <a class="btn-sm btn btn-warning" href="/restaurants/new" role="button" id="createButton">Create</a>
-      <a href="/users/logout" class="btn-sm btn btn-outline-light">Logout</a>
+      <div>
+        <a class="btn-sm btn btn-outline-light mr-2" href="/restaurants/new" role="button" id="createButton">Create</a>
+        <a href="/users/logout" class="btn-sm btn btn-outline-light">Logout</a>
+      </div>
       {{else}}
       <a href="/users/login" class="btn-sm btn btn-outline-light">Login</a>
       {{/if}}
